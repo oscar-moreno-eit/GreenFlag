@@ -25,6 +25,7 @@
         android:text="@string/create_account"
         android:textColor="@color/white"
         android:textSize="25sp"
+        android:fontFamily="@font/museum_sans_500"
         app:layout_constraintBottom_toBottomOf="@+id/iv_back_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +68,7 @@
                 android:text="@string/email"
                 android:textColor="@color/white"
                 android:textSize="25sp"
+                android:fontFamily="@font/museum_sans_300"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -80,8 +82,26 @@
                 android:hint="@string/example"
                 android:inputType="textEmailAddress"
                 android:textColorHint="#78909C"
-                android:textSize="30sp"
+                android:textSize="25sp"
+                android:fontFamily="@font/museum_sans_300"
                 app:layout_constraintTop_toBottomOf="@id/tv_email" />
+
+            <TextView
+                android:id="@+id/tv_wrong_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/text_view_border"
+                android:drawableStart="@drawable/cross"
+                android:drawablePadding="16dp"
+                android:fontFamily="@font/museum_sans_300"
+                android:padding="10dp"
+                android:text="@string/already"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="@id/et_email"
+                app:layout_constraintTop_toBottomOf="@id/et_email" />
 
             <TextView
                 android:id="@+id/tv_password"
@@ -91,8 +111,9 @@
                 android:text="@string/create_password"
                 android:textColor="@color/white"
                 android:textSize="25sp"
+                android:fontFamily="@font/museum_sans_300"
                 app:layout_constraintLeft_toLeftOf="@id/et_email"
-                app:layout_constraintTop_toBottomOf="@id/et_email" />
+                app:layout_constraintTop_toBottomOf="@id/tv_wrong_email" />
 
             <EditText
                 android:id="@+id/et_password"
@@ -102,7 +123,8 @@
                 android:background="@color/white"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:textSize="30sp"
+                android:textSize="25sp"
+                android:fontFamily="@font/museum_sans_300"
                 app:layout_constraintTop_toBottomOf="@id/tv_password"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -114,6 +136,7 @@
                 android:text="@string/repeat_password"
                 android:textColor="@color/white"
                 android:textSize="25sp"
+                android:fontFamily="@font/museum_sans_300"
                 app:layout_constraintLeft_toLeftOf="@id/et_email"
                 app:layout_constraintTop_toBottomOf="@id/et_password" />
 
@@ -125,9 +148,27 @@
                 android:background="@color/white"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:textSize="30sp"
+                android:textSize="25sp"
+                android:fontFamily="@font/museum_sans_300"
                 app:layout_constraintTop_toBottomOf="@id/tv_confirm_password"
                 tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tv_wrong_passwords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/cross"
+                android:drawablePadding="16dp"
+                android:fontFamily="@font/museum_sans_300"
+                android:padding="10dp"
+                android:text="@string/one_invalid"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:visibility="gone"
+                android:background="@drawable/text_view_border"
+                app:layout_constraintLeft_toLeftOf="@id/et_email"
+                app:layout_constraintTop_toBottomOf="@id/et_confirm_password" />
 
             <TextView
                 android:id="@+id/tv_criteria"
@@ -137,10 +178,10 @@
                 android:text="@string/minimal"
                 android:textColor="@color/white"
                 android:textSize="15sp"
+                android:fontFamily="@font/museum_sans_300"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-
-                app:layout_constraintTop_toBottomOf="@id/et_confirm_password" />
+                app:layout_constraintTop_toBottomOf="@id/tv_wrong_passwords" />
 
             <Button
                 android:id="@+id/btn_create"
@@ -152,6 +193,7 @@
                 android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textSize="20sp"
+                android:fontFamily="@font/museum_sans_300"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
