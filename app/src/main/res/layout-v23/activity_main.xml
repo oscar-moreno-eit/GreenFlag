@@ -16,7 +16,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.120000005"
+        app:layout_constraintVertical_bias="0.060000002"
         app:srcCompat="@drawable/logo_green_flag" />
 
     <TextView
@@ -32,32 +32,35 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22000003" />
 
     <TextView
         android:id="@+id/tv_subtitle_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/tick"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
+        android:drawableStart="@drawable/tick"
         android:fontFamily="@font/museum_sans_300"
-        android:textColor="#FFFFFF"
         android:text="@string/car"
+        android:textColor="#FFFFFF"
+        android:drawablePadding="8dp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/tv_tittle"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tittle"
-        
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tv_tittle" />
 
     <TextView
         android:id="@+id/tv_subtitle_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="8dp"
         android:drawableStart="@drawable/tick"
         android:fontFamily="@font/museum_sans_300"
         android:gravity="center"
         android:text="@string/request"
         android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/tv_subtitle_1"
         app:layout_constraintTop_toBottomOf="@+id/tv_subtitle_1" />
 
@@ -65,26 +68,32 @@
         android:id="@+id/tv_subtitle_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:drawableStart="@drawable/tick"
+        android:fontFamily="@font/museum_sans_300"
         android:text="@string/policy"
         android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:drawablePadding="8dp"
         app:layout_constraintStart_toStartOf="@+id/tv_subtitle_2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle_2"
-        android:fontFamily="@font/museum_sans_300"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle_2" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="45dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/gradient_button_background"
         android:text="@string/create_account"
+        android:textAllCaps="false"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="w,"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle_3"
+        app:layout_constraintVertical_bias="1" />
 
 </android.support.constraint.ConstraintLayout>
