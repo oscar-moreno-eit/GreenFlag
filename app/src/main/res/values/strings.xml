@@ -9,7 +9,9 @@
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - -  Create an account  - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <string name="create_account">Create an account</string>
+    <string name="go_back">Return</string>
     <string name="email">Email address</string>
+    <string name="example">example@email.com</string>
     <string name="create_password">Create password</string>
     <string name="criteria">See criteria below</string>
     <string name="repeat_password">Repeat password</string>
