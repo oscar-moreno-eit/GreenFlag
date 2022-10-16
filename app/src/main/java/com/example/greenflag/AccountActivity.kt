@@ -20,6 +20,8 @@ class AccountActivity : AppCompatActivity() {
     private lateinit var tvWrongEmail: TextView
     private lateinit var tvWrongPasswords: TextView
 
+    private var sEmail: List<String> = listOf("test@gmail.com","oscar.moreno@enhanceit.us","admin@greenflag.com")
+
     private lateinit var etPassword: EditText
     private lateinit var etConfirmPassword: EditText
 
@@ -66,14 +68,24 @@ class AccountActivity : AppCompatActivity() {
         Log.d(TAG, "validatePassword:  email $email | password $password | confirmPassword $confirmPassword ")
 
         if(email.contains(" ") || email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            tvWrongEmail.text = getText(R.string.correct)
             tvWrongEmail.visibility = TextView.VISIBLE
             etEmail.requestFocus()
             flag = false
             etEmail.setBackgroundColor(Color.WHITE)
             etEmail.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0)
         }else{
-            etEmail.setBackgroundResource(R.drawable.edit_tex_border)
-            etEmail.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.tick,0)
+            if (sEmail.contains(email)){
+                tvWrongEmail.text = getText(R.string.already)
+                tvWrongEmail.visibility = TextView.VISIBLE
+                etEmail.requestFocus()
+                flag = false
+                etEmail.setBackgroundColor(Color.WHITE)
+                etEmail.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0)
+            }else{
+                etEmail.setBackgroundResource(R.drawable.edit_tex_border)
+                etEmail.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.tick,0)
+            }
         }
         etPassword.background = null
         etConfirmPassword.background = null

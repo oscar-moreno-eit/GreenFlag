@@ -18,7 +18,8 @@
     <string name="minimal">Your password should be a minimum of 8 characters and contain at least one number, one uppercase and one lowercase letter. You can use special characters.</string>
     <string name="one_invalid">One of the passwords you entered wasn\'t valid</string>
     <string name="match">Your passwords don\'t match</string>
-    <string name="already">You must introduce a correct email</string>
+    <string name="correct">You must introduce a correct email</string>
+    <string name="already">An account already exists for this email address</string>
     <string name="done">Done</string>
     <string name="account_created">This account has been created successfully!</string>
 </resources>
