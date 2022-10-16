@@ -1,5 +1,6 @@
 package com.example.greenflag
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -45,6 +46,10 @@ class AccountActivity : AppCompatActivity() {
         btnCreateAnAccount.setOnClickListener {
             if (validatePassword()) {
                 Toast.makeText(this, getString(R.string.account_created), Toast.LENGTH_SHORT).show()
+                etEmail.isEnabled = false
+                etPassword.isEnabled = false
+                etConfirmPassword.isEnabled = false
+                btnCreateAnAccount.isEnabled = false
             }
         }
 
@@ -60,22 +65,41 @@ class AccountActivity : AppCompatActivity() {
 
         Log.d(TAG, "validatePassword:  email $email | password $password | confirmPassword $confirmPassword ")
 
-        if(email.contains(" ") || email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches())  {
+        if(email.contains(" ") || email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             tvWrongEmail.visibility = TextView.VISIBLE
             etEmail.requestFocus()
             flag = false
+            etEmail.setBackgroundColor(Color.WHITE)
+            etEmail.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0)
+        }else{
+            etEmail.setBackgroundResource(R.drawable.edit_tex_border)
+            etEmail.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.tick,0)
         }
-
-        if (password != confirmPassword)  {
+        etPassword.background = null
+        etConfirmPassword.background = null
+        if (password != confirmPassword) {
             tvWrongPasswords.text = getString(R.string.match)
             tvWrongPasswords.visibility = View.VISIBLE
-            flag =false
-        }
-
-        if (!isValidPassword(password) || !isValidPassword(confirmPassword))  {
-            tvWrongPasswords.text = getString(R.string.one_invalid)
-            tvWrongPasswords.visibility = View.VISIBLE
-            flag =false
+            etPassword.setBackgroundColor(Color.WHITE)
+            etPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
+            etConfirmPassword.setBackgroundColor(Color.WHITE)
+            etConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0)
+            flag = false
+        }else{
+            if (!isValidPassword(password) || !isValidPassword(confirmPassword)) {
+                tvWrongPasswords.text = getString(R.string.one_invalid)
+                tvWrongPasswords.visibility = View.VISIBLE
+                etPassword.setBackgroundColor(Color.WHITE)
+                etPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
+                etConfirmPassword.setBackgroundColor(Color.WHITE)
+                etConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0)
+                flag = false
+            }else{
+                etPassword.setBackgroundResource(R.drawable.edit_tex_border)
+                etPassword.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.tick,0)
+                etConfirmPassword.setBackgroundResource(R.drawable.edit_tex_border)
+                etConfirmPassword.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.tick,0)
+            }
         }
 
         return flag
